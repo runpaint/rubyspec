@@ -11,6 +11,11 @@ describe "String#scan" do
     "".scan(//).should == [""]
   end
 
+  it "returns an empty array when there are no matches" do
+    "cruel world".scan(/z/).should == []
+    "cruel world".scan(/([2y])/).should == []
+  end
+
   it "stores groups as arrays in the returned arrays" do
     "hello".scan(/()/).should == [[""]] * 6
     "hello".scan(/()()/).should == [["", ""]] * 6
