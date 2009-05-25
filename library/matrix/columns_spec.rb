@@ -8,7 +8,8 @@ describe "Matrix.columns" do
     @m = Matrix.columns([@a, @b])
   end
   
-  it "creates a matrix from argument columns" do
+  it "creates a Matrix from argument columns" do
+    @m.instance_of?(Matrix).should be_true
     @m.column(0).to_a.should == @a
     @m.column(1).to_a.should == @b
   end
